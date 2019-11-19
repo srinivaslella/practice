@@ -1,0 +1,26 @@
+buildscript {
+	dependencies {
+		classpath group: "com.liferay", name: "com.liferay.gradle.plugins", version: "4.4.54"
+	}
+
+	repositories {
+		maven {
+			url "https://repository-cdn.liferay.com/nexus/content/groups/public"
+		}
+	}
+}
+
+apply plugin: "com.liferay.ext.plugin"
+apply plugin: "eclipse"
+
+eclipse {
+	classpath {
+		plusConfigurations += [configurations.portal]
+	}
+}
+
+repositories {
+	maven {
+		url "https://repository-cdn.liferay.com/nexus/content/groups/public"
+	}
+}
